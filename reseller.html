@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ULTRA CONNECT — Reseller Partner Portal</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body {
+      background-color: #050505; color: #ffffff; overflow-x: hidden;
+      background-image: linear-gradient(180deg, rgba(5, 5, 5, 0.85) 0%, rgba(10, 10, 15, 0.95) 100%),
+        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1920&auto=format&fit=crop');
+      background-size: cover; background-position: center; background-attachment: fixed;
+    }
+    
+    /* Header (Matches Main Site) */
+    header {
+      position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 40px; z-index: 1000; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+    .header-left { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+    .logo { font-size: 1.2rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; text-decoration: none; }
+    .burner-badge {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      background: linear-gradient(90deg, #ff0055, #ff5500, #ff0055); background-size: 200% auto;
+      color: #ffffff; padding: 4px 10px; border-radius: 2px; animation: burnerGlow 3s linear infinite;
+    }
+    @keyframes burnerGlow { 0% { background-position: 0% center; } 50% { background-position: 100% center; } 100% { background-position: 0% center; } }
+    
+    .header-right { display: flex; align-items: center; gap: 20px; }
+    nav a { color: #aaaaaa; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; }
+    nav a:hover { color: #ffffff; }
+
+    /* Hero Section */
+    .hero { min-height: 80vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 140px 20px 60px; }
+    .partner-badge {
+      display: inline-flex; align-items: center; gap: 8px; margin-bottom: 20px;
+      background: rgba(0, 229, 255, 0.1); border: 1px solid rgba(0, 229, 255, 0.3);
+      padding: 6px 16px; border-radius: 20px; font-size: 0.75rem; font-weight: 600;
+      letter-spacing: 2px; text-transform: uppercase; color: #00e5ff;
+    }
+    .hero h1 { font-size: 3rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; text-shadow: 0 0 20px rgba(0,0,0,0.5); line-height: 1.1; }
+    .hero h1 span { color: #00e5ff; }
+    .hero p { font-size: 1.1rem; color: #c0c0c0; max-width: 700px; line-height: 1.6; margin-bottom: 40px; }
+    
+    .btn-main { background-color: #00e5ff; color: #000; padding: 16px 36px; border: none; border-radius: 4px; font-size: 0.9rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; transition: all 0.3s ease; box-shadow: 0 0 20px rgba(0, 229, 255, 0.4); display: inline-block; cursor: pointer; }
+    .btn-main:hover { background-color: #fff; box-shadow: 0 0 30px rgba(255, 255, 255, 0.6); transform: translateY(-2px); }
+
+    /* Features Grid */
+    .section-container { max-width: 1200px; margin: 0 auto; padding: 60px 20px; }
+    .section-title { text-align: center; font-size: 1.5rem; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 10px; color: #fff; }
+    .section-subtitle { text-align: center; color: #888; font-size: 0.9rem; margin-bottom: 50px; text-transform: uppercase; letter-spacing: 1px; }
+
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 60px; }
+    .feature-card {
+      background: rgba(20, 20, 25, 0.6); backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.1); padding: 40px 30px; border-radius: 12px;
+      transition: transform 0.3s ease, border-color 0.3s ease;
+    }
+    .feature-card:hover { transform: translateY(-5px); border-color: #00e5ff; background: rgba(30, 30, 35, 0.8); }
+    .feature-icon { font-size: 2rem; margin-bottom: 20px; display: inline-block; }
+    .feature-card h3 { font-size: 1.2rem; margin-bottom: 15px; letter-spacing: 1px; color: #fff; }
+    .feature-card p { color: #aaa; font-size: 0.9rem; line-height: 1.6; }
+
+    /* Target Apps Banner */
+    .apps-banner {
+      background: linear-gradient(90deg, rgba(255, 0, 85, 0.1), rgba(0, 229, 255, 0.1));
+      border: 1px solid rgba(255, 255, 255, 0.15); border-radius: 12px;
+      padding: 40px; text-align: center; margin: 60px 0;
+    }
+    .apps-banner h3 { font-size: 1.4rem; letter-spacing: 2px; margin-bottom: 15px; text-transform: uppercase; }
+    .apps-banner p { color: #bbb; margin-bottom: 25px; font-size: 0.95rem; }
+    .app-tags { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+    .app-tag { background: rgba(0,0,0,0.5); padding: 8px 20px; border-radius: 30px; border: 1px solid rgba(255,255,255,0.2); font-size: 0.85rem; font-weight: 600; letter-spacing: 1px; color: #fff; }
+
+    /* Pricing/Packages Grid */
+    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; margin-bottom: 80px; }
+    .pricing-card {
+      background: rgba(10, 10, 10, 0.8); border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px; padding: 40px 30px; text-align: center; position: relative; overflow: hidden;
+    }
+    .pricing-card.popular { border-color: #ff0055; box-shadow: 0 0 30px rgba(255, 0, 85, 0.15); }
+    .popular-tag {
+      position: absolute; top: 15px; right: -30px; background: #ff0055; color: #fff;
+      font-size: 0.7rem; font-weight: 700; letter-spacing: 1px; padding: 5px 40px;
+      transform: rotate(45deg); text-transform: uppercase;
+    }
+    .pricing-card h4 { font-size: 1.3rem; letter-spacing: 1px; margin-bottom: 10px; color: #fff; }
+    .pricing-card .price { font-size: 2.5rem; font-weight: 700; margin-bottom: 20px; color: #00e5ff; }
+    .pricing-card .price span { font-size: 1rem; color: #777; font-weight: 400; }
+    .pricing-features { list-style: none; margin-bottom: 30px; text-align: left; }
+    .pricing-features li { padding: 10px 0; border-bottom: 1px solid rgba(255, 255, 255, 0.05); color: #ccc; font-size: 0.9rem; display: flex; align-items: center; gap: 10px; }
+    .pricing-features li::before { content: '✓'; color: #00e5ff; font-weight: bold; }
+    .btn-outline {
+      display: block; width: 100%; padding: 14px; background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.3); color: #fff; text-decoration: none;
+      font-size: 0.85rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase;
+      transition: all 0.3s; border-radius: 4px;
+    }
+    .pricing-card.popular .btn-outline { background: #ff0055; border-color: #ff0055; }
+    .btn-outline:hover { background: #fff; color: #000; border-color: #fff; }
+
+    /* Reseller Application Form Section */
+    .form-wrapper {
+      background: rgba(15, 15, 20, 0.75);
+      border: 1px solid rgba(0, 229, 255, 0.2);
+      border-radius: 16px;
+      padding: 50px 40px;
+      max-width: 800px;
+      margin: 0 auto 60px;
+      backdrop-filter: blur(15px);
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+    }
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+    .form-group.full-width {
+      grid-column: 1 / -1;
+    }
+    .form-group label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #00e5ff;
+      font-weight: 600;
+    }
+    .form-group input, .form-group select, .form-group textarea {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      color: #ffffff;
+      padding: 14px 16px;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      outline: none;
+      transition: all 0.3s ease;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      border-color: #00e5ff;
+      background: rgba(0, 0, 0, 0.8);
+      box-shadow: 0 0 10px rgba(0, 229, 255, 0.2);
+    }
+    .form-group select option {
+      background: #000;
+      color: #fff;
+    }
+    .submit-btn {
+      width: 100%;
+      margin-top: 10px;
+      background: linear-gradient(90deg, #00e5ff, #0077ff);
+      border: none;
+      color: #000;
+      font-weight: 800;
+    }
+    .submit-btn:hover {
+      background: linear-gradient(90deg, #ffffff, #00e5ff);
+    }
+
+    footer { padding: 40px 20px; text-align: center; font-size: 0.75rem; color: #555; border-top: 1px solid rgba(255, 255, 255, 0.05); margin-top: 60px; }
+
+    @media (max-width: 768px) { 
+      nav { display: none; } 
+      .hero h1 { font-size: 2rem; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-wrapper { padding: 30px 20px; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <a href="index.html" class="logo">ULTRA CONNECT</a>
+      <span class="burner-badge">PARTNER PORTAL</span>
+    </div>
+    <div class="header-right">
+      <nav>
+        <a href="index.html">Home</a>
+        <a href="order-vpn.html">VPN Order</a>
+        <a href="#packages">Reseller Plans</a>
+        <a href="#apply">Apply Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="partner-badge">B2B INITIATIVE</div>
+    <h1>Build Your <span>VPN Empire</span></h1>
+    <p>Get exclusive access to the Ultra Connect automated reseller panel. Generate your own premium pins, set your own retail prices, and dominate the market with industry-leading uptime.</p>
+    <div style="display:flex; gap:15px; flex-wrap:wrap; justify-content:center;">
+      <a href="#packages" class="btn-main">View Packages</a>
+      <a href="#apply" class="btn-main" style="background:#ff0055; color:#fff; box-shadow:0 0 20px rgba(255,0,85,0.4);">Register As Agent</a>
+    </div>
+  </section>
+
+  <section class="section-container">
+    <h2 class="section-title">Why Partner With Us?</h2>
+    <p class="section-subtitle">Infrastructure built to maximize your profits and client retention</p>
+    
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">⚙️</div>
+        <h3>Automated Control Panel</h3>
+        <p>Manage your entire customer base from a sleek dashboard. Generate Exotic Fast VIP and Exotic Tunnel pins instantly, track active users, and monitor bandwidth 24/7.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📈</div>
+        <h3>Unbeatable Margins</h3>
+        <p>Buy in bulk at deep wholesale discounts. Our pricing structure ensures you retain massive profit margins on every single retail sale you make in your local network.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3>Priority Infrastructure</h3>
+        <p>Your clients get routed through our dedicated VIP server clusters. Zero-rated tunneling and SNI host injections are maintained by our engineers to ensure zero downtime.</p>
+      </div>
+    </div>
+
+    <div class="apps-banner">
+      <h3>Exclusive Reseller Access For Top Apps</h3>
+      <p>Your generated accounts are fully compatible with our flagship Android applications.</p>
+      <div class="app-tags">
+        <span class="app-tag">EXOTIC TUNNEL</span>
+        <span class="app-tag">EXOTIC FAST VIP</span>
+      </div>
+    </div>
+
+    <h2 class="section-title" id="packages">Wholesale Pin Packages</h2>
+    <p class="section-subtitle">Select a package tier to start or register below</p>
+    
+    <div class="pricing-grid">
+      
+      <!-- Starter Tier -->
+      <div class="pricing-card">
+        <h4>Starter Agent</h4>
+        <div class="price">10 <span>PINS</span></div>
+        <ul class="pricing-features">
+          <li>10 Premium Monthly Pins</li>
+          <li>Access to Reseller Dashboard</li>
+          <li>Standard Support</li>
+          <li>Valid for Exotic Tunnel & VIP</li>
+        </ul>
+        <a href="https://wa.me/256706422500?text=I%20want%20to%20buy%20the%2010%20Pin%20Starter%20Package" target="_blank" class="btn-outline">Buy Starter</a>
+      </div>
+
+      <!-- Pro Tier -->
+      <div class="pricing-card popular">
+        <div class="popular-tag">Best Value</div>
+        <h4>Pro Reseller</h4>
+        <div class="price">50 <span>PINS</span></div>
+        <ul class="pricing-features">
+          <li>50 Premium Monthly Pins</li>
+          <li>Bulk Generation Tool</li>
+          <li>Priority WhatsApp Support</li>
+          <li>High Margin Tier</li>
+        </ul>
+        <a href="https://wa.me/256706422500?text=I%20want%20to%20buy%20the%2050%20Pin%20Pro%20Package" target="_blank" class="btn-outline">Buy Pro Package</a>
+      </div>
+
+      <!-- Master Tier -->
+      <div class="pricing-card">
+        <h4>Master Distributor</h4>
+        <div class="price">100+ <span>PINS</span></div>
+        <ul class="pricing-features">
+          <li>100+ Premium Monthly Pins</li>
+          <li>Sub-reseller Creation Privileges</li>
+          <li>Direct Admin Line Support</li>
+          <li>Maximum Profit Margins</li>
+        </ul>
+        <a href="https://wa.me/256706422500?text=I%20want%20to%20discuss%20the%20Master%20Distributor%20Package" target="_blank" class="btn-outline">Contact Admin</a>
+      </div>
+
+    </div>
+
+    <!-- Interactive Reseller Application Form -->
+    <div class="form-wrapper" id="apply">
+      <h2 class="section-title" style="margin-bottom:10px;">Agent Registration</h2>
+      <p class="section-subtitle" style="margin-bottom:30px;">Fill in your details below to submit your reseller application</p>
+
+      <form id="resellerForm">
+        <div class="form-grid">
+          
+          <div class="form-group">
+            <label for="fullName">Full Name</label>
+            <input type="text" id="fullName" placeholder="e.g. John Doe" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">WhatsApp Phone Number</label>
+            <input type="tel" id="phone" placeholder="e.g. +256 700 000 000" required>
+          </div>
+
+          <div class="form-group">
+            <label for="location">Location / District</label>
+            <input type="text" id="location" placeholder="e.g. Kampala, Jinja, Gulu" required>
+          </div>
+
+          <div class="form-group">
+            <label for="packageTier">Preferred Starting Tier</label>
+            <select id="packageTier" required>
+              <option value="Starter (10 Pins)">Starter Agent (10 Pins)</option>
+              <option value="Pro (50 Pins)" selected>Pro Reseller (50 Pins)</option>
+              <option value="Master Distributor (100+ Pins)">Master Distributor (100+ Pins)</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="primaryApp">Target Application Focus</label>
+            <select id="primaryApp" required>
+              <option value="Both Exotic Tunnel & Exotic Fast VIP">Both Exotic Tunnel & Exotic Fast VIP</option>
+              <option value="Exotic Tunnel Only">Exotic Tunnel Only</option>
+              <option value="Exotic Fast VIP Only">Exotic Fast VIP Only</option>
+            </select>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="notes">Additional Information / Experience (Optional)</label>
+            <textarea id="notes" rows="3" placeholder="Tell us about your estimated monthly customer volume or current customer base..."></textarea>
+          </div>
+
+          <div class="form-group full-width">
+            <button type="submit" class="btn-main submit-btn">Submit Application via WhatsApp</button>
+          </div>
+
+        </div>
+      </form>
+    </div>
+
+  </section>
+
+  <footer>
+    <p>© 2026 ULTRA CONNECT UGANDA. EXOTIC TUNNEL B2B PLATFORM.</p>
+  </footer>
+
+  <script>
+    // Handle form submission and redirect formatted message to WhatsApp
+    document.getElementById('resellerForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const fullName = document.getElementById('fullName').value.trim();
+      const phone = document.getElementById('phone').value.trim();
+      const location = document.getElementById('location').value.trim();
+      const packageTier = document.getElementById('packageTier').value;
+      const primaryApp = document.getElementById('primaryApp').value;
+      const notes = document.getElementById('notes').value.trim();
+
+      let message = `*NEW RESELLER APPLICATION*%0A%0A`;
+      message += `👤 *Name:* ${encodeURIComponent(fullName)}%0A`;
+      message += `📞 *Phone:* ${encodeURIComponent(phone)}%0A`;
+      message += `📍 *Location:* ${encodeURIComponent(location)}%0A`;
+      message += `📦 *Tier Selected:* ${encodeURIComponent(packageTier)}%0A`;
+      message += `📱 *Target Apps:* ${encodeURIComponent(primaryApp)}%0A`;
+      if(notes) {
+        message += `📝 *Notes:* ${encodeURIComponent(notes)}%0A`;
+      }
+      message += `%0APlease process my portal access and payment details.`;
+
+      const whatsappNumber = "256706422500";
+      window.open(`https://wa.me/${whatsappNumber}?text=${message}`, '_blank');
+    });
+  </script>
+
+</body>
+</html>
