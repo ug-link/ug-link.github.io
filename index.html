@@ -17,11 +17,81 @@
       padding: 20px 40px; z-index: 1000; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
+    
+    /* Header Left Section */
+    .header-left { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
     .logo { font-size: 1.2rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; text-decoration: none; }
-    .badge-ug { font-size: 0.75rem; background: rgba(255, 255, 255, 0.1); color: #ccc; padding: 4px 8px; border-radius: 2px; margin-left: 8px; border: 1px solid rgba(255, 255, 255, 0.2); }
-    nav a { color: #aaaaaa; text-decoration: none; margin-left: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; }
+    .badge-ug { font-size: 0.75rem; background: rgba(255, 255, 255, 0.1); color: #ccc; padding: 4px 8px; border-radius: 2px; border: 1px solid rgba(255, 255, 255, 0.2); }
+    
+    /* Animated Burner Badge */
+    .burner-badge {
+      font-size: 0.65rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      background: linear-gradient(90deg, #ff0055, #ff5500, #ff0055);
+      background-size: 200% auto;
+      color: #ffffff;
+      padding: 4px 10px;
+      border-radius: 2px;
+      animation: burnerGlow 3s linear infinite;
+    }
+
+    @keyframes burnerGlow {
+      0% { background-position: 0% center; }
+      50% { background-position: 100% center; }
+      100% { background-position: 0% center; }
+    }
+
+    /* Header Right Section & Dropdown Menu */
+    .header-right { display: flex; align-items: center; gap: 20px; }
+    nav a { color: #aaaaaa; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; }
     nav a:hover { color: #ffffff; }
 
+    .menu-dropdown-container { position: relative; }
+    .menu-trigger-btn {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      color: #ffffff;
+      padding: 6px 10px;
+      border-radius: 2px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.3s ease;
+    }
+    .menu-trigger-btn:hover { background: #ffffff; color: #000000; }
+    .menu-trigger-btn svg { width: 18px; height: 18px; fill: currentColor; }
+
+    .dropdown-menu {
+      display: none;
+      position: absolute;
+      right: 0;
+      top: calc(100% + 15px);
+      width: 220px;
+      background: rgba(10, 10, 10, 0.95);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.8);
+      flex-direction: column;
+      z-index: 1001;
+    }
+    .dropdown-menu.show { display: flex; }
+    .dropdown-menu a {
+      color: #cccccc;
+      padding: 12px 18px;
+      text-decoration: none;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.2s ease;
+    }
+    .dropdown-menu a:last-child { border-bottom: none; }
+    .dropdown-menu a:hover { background: rgba(255, 255, 255, 0.1); color: #ffffff; padding-left: 22px; }
+
+    /* Hero Section */
     .hero-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 20px 60px 20px; }
     .pre-header { font-size: 0.8rem; letter-spacing: 3px; color: #aaaaaa; text-transform: uppercase; margin-bottom: 12px; }
     h1 { font-size: 2.5rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 15px; }
@@ -33,29 +103,50 @@
     .btn-sub { background-color: rgba(0, 0, 0, 0.4); color: #ffffff; padding: 14px 32px; border: 1px solid rgba(255, 255, 255, 0.4); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(5px); }
     .btn-sub:hover { border-color: #ffffff; background-color: #ffffff; color: #000000; }
 
+    /* App Cards & App Icons Styling */
     .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%; max-width: 1000px; margin-top: 30px; }
     .app-card { background: rgba(15, 15, 15, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); padding: 25px; text-align: center; backdrop-filter: blur(10px); }
+    .app-icon { width: 70px; height: 70px; border-radius: 16px; margin-bottom: 15px; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
     .app-card h3 { font-size: 1.1rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
     .app-card p { font-size: 0.85rem; color: #aaa; margin-bottom: 20px; line-height: 1.5; }
 
     footer { padding: 40px 20px; text-align: center; font-size: 0.75rem; color: #777777; width: 100%; }
-    @media (max-width: 600px) { nav { display: none; } h1 { font-size: 1.8rem; } }
+    @media (max-width: 768px) { nav { display: none; } h1 { font-size: 1.8rem; } }
   </style>
 </head>
 <body>
 
   <header>
-    <div>
+    <div class="header-left">
       <a href="index.html" class="logo">ULTRA CONNECT</a>
       <span class="badge-ug">UGANDA 🇺🇬</span>
+      <!-- Burner Banner Badge -->
+      <span class="burner-badge">🔥 HOT DEALS ACTIVE</span>
     </div>
-    <nav>
-      <a href="#apps">Apps</a>
-      <a href="order-vpn.html">VPN Order</a>
-      <a href="data-loading.html">Data Loading</a>
-      <a href="tutorials.html">Tutorials</a>
-      <a href="#contact">Contact</a>
-    </nav>
+
+    <div class="header-right">
+      <nav>
+        <a href="#apps">Apps</a>
+        <a href="order-vpn.html">VPN Order</a>
+        <a href="data-loading.html">Data Loading</a>
+        <a href="tutorials.html">Tutorials</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <!-- Dropdown Menu Icon Near Location / Nav -->
+      <div class="menu-dropdown-container">
+        <button class="menu-trigger-btn" id="menuBtn" aria-label="Toggle Menu">
+          <svg viewBox="0 0 24 24">
+            <path d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"/>
+          </svg>
+        </button>
+        <div class="dropdown-menu" id="dropdownMenu">
+          <a href="reseller.html">Reseller Platform</a>
+          <a href="pricing.html">View Pricing &amp; Plans</a>
+          <a href="news.html">News &amp; Updates</a>
+        </div>
+      </div>
+    </div>
   </header>
 
   <section class="hero-section" id="services">
@@ -75,12 +166,14 @@
     
     <div class="app-grid">
       <div class="app-card">
+        <img src="https://play-lh.googleusercontent.com/wqpVBhopBOlNRxq7RP30zGMtLLigThIyiq1C0EFTGyzLCsUHwB6E0Qqq1Mb07-AnbNqSMMGkLNEC8EN9njbHmg" alt="Exotic Tunnel Icon" class="app-icon">
         <h3>Exotic Tunnel</h3>
         <p>Available on Google Play Store for easy installation and automated server updates.</p>
         <a href="https://play.google.com/store/search?q=exotic%20tunnel&c=apps" target="_blank" class="btn-sub" style="display:inline-block;">PlayStore Download</a>
       </div>
 
       <div class="app-card">
+        <img src="https://play-lh.googleusercontent.com/bQ0ArFm-oRAj1juwkIHmuBX1hsiyIJVgqCWNwp0aE1qodLu66DWk7E9TVMnJe9dkNBo_xEXXwZjkuRkIk7LuLw" alt="Exotic Fast VIP Icon" class="app-icon">
         <h3>Exotic Fast VIP</h3>
         <p>Premium VIP build for high-speed routing. Download the direct installation file below.</p>
         <!-- Unbranded direct download link -->
@@ -88,6 +181,7 @@
       </div>
 
       <div class="app-card">
+        <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcR0kTK8tRCvrMc5kOC0KPLDBHxi5sAe5Tw6k2QRcS0f0mT561LSstIBTPGCgd2DtXtYQs8kch17O858M0Q" alt="HTTP Custom Icon" class="app-icon">
         <h3>HTTP Custom</h3>
         <p>Custom tunneling client. Import configuration payload files for fast data routing.</p>
         <a href="https://play.google.com/store/search?q=http%20custom&c=apps" target="_blank" class="btn-sub" style="display:inline-block;">PlayStore Download</a>
@@ -109,6 +203,22 @@
       <p>© 2026 ULTRA CONNECT UGANDA. ALL RIGHTS RESERVED.</p>
     </footer>
   </section>
+
+  <script>
+    // Toggle dropdown menu visibility
+    const menuBtn = document.getElementById('menuBtn');
+    const dropdownMenu = document.getElementById('dropdownMenu');
+
+    menuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      dropdownMenu.classList.toggle('show');
+    });
+
+    // Close menu when clicking anywhere outside
+    document.addEventListener('click', () => {
+      dropdownMenu.classList.remove('show');
+    });
+  </script>
 
 </body>
 </html>
