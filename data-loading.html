@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unlimited Data Loading — ULTRA CONNECT</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body {
+      background-color: #000000; color: #ffffff; overflow-x: hidden;
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
+      background-size: cover; background-position: center; background-attachment: fixed;
+    }
+    header {
+      position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 40px; z-index: 1000; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .logo { font-size: 1.2rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; text-decoration: none; }
+    .badge-ug { font-size: 0.75rem; background: rgba(255, 255, 255, 0.1); color: #ccc; padding: 4px 8px; border-radius: 2px; margin-left: 8px; border: 1px solid rgba(255, 255, 255, 0.2); }
+    nav a { color: #aaaaaa; text-decoration: none; margin-left: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; }
+    nav a:hover { color: #ffffff; }
+
+    /* Announcement Marquee */
+    .marquee-container {
+      width: 100%;
+      background: rgba(255, 204, 0, 0.15);
+      border-bottom: 1px solid rgba(255, 204, 0, 0.3);
+      color: #ffcc00;
+      padding: 10px 0;
+      font-size: 0.85rem;
+      font-weight: 600;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 75px;
+    }
+
+    .page-container { min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 40px 20px 140px 20px; }
+    h1 { font-size: 2.2rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; text-align: center; }
+    
+    .price-tag { background: #ffffff; color: #000000; font-weight: 800; font-size: 0.9rem; letter-spacing: 2px; padding: 6px 16px; text-transform: uppercase; margin-bottom: 15px; display: inline-block; }
+    p.subtitle { font-size: 0.95rem; color: #d1d5db; max-width: 600px; line-height: 1.6; margin-bottom: 30px; text-align: center; }
+
+    .form-container { width: 100%; max-width: 600px; background: rgba(10, 10, 10, 0.85); border: 1px solid rgba(255, 255, 255, 0.15); backdrop-filter: blur(15px); padding: 40px; text-align: left; border-radius: 4px; }
+    
+    .payment-instruction {
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 4px;
+    }
+    .payment-instruction h4 {
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: #ffcc00;
+      margin-bottom: 8px;
+    }
+    .payment-instruction p {
+      font-size: 0.85rem;
+      color: #cccccc;
+      line-height: 1.4;
+    }
+
+    .notice-box {
+      background: rgba(255, 204, 0, 0.1);
+      border-left: 3px solid #ffcc00;
+      padding: 12px 15px;
+      margin-top: 15px;
+      margin-bottom: 20px;
+      font-size: 0.82rem;
+      color: #e5e7eb;
+      line-height: 1.5;
+    }
+
+    .payment-actions { display: flex; flex-direction: column; gap: 12px; margin-bottom: 25px; }
+    
+    .btn-payment {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      padding: 14px 20px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-mtn { background-color: #ffcc00; color: #000000; border: 1px solid #ffcc00; }
+    .btn-mtn:hover { background-color: #e6b800; }
+
+    .btn-airtel { background-color: #e60000; color: #ffffff; border: 1px solid #e60000; }
+    .btn-airtel:hover { background-color: #cc0000; }
+
+    .provider-logo { width: 22px; height: 22px; }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 15px; }
+    .form-group.full-width { grid-column: span 2; }
+
+    label { font-size: 0.75rem; text-transform: uppercase; letter-spacing: 1.5px; color: #aaaaaa; margin-bottom: 8px; }
+    input[type="text"], input[type="tel"], input[type="email"] { background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); padding: 12px 15px; color: #ffffff; font-size: 0.9rem; outline: none; }
+    input[type="file"] { background: rgba(0, 0, 0, 0.6); border: 1px solid rgba(255, 255, 255, 0.2); padding: 10px; color: #aaaaaa; font-size: 0.8rem; }
+
+    .btn-submit-docs { 
+      background-color: transparent; 
+      color: #ffffff; 
+      padding: 14px 32px; 
+      border: 1px solid #ffffff; 
+      font-size: 0.8rem; 
+      font-weight: 700; 
+      text-transform: uppercase; 
+      letter-spacing: 2px; 
+      cursor: pointer; 
+      width: 100%; 
+      margin-top: 15px; 
+      transition: all 0.3s ease; 
+    }
+    .btn-submit-docs:hover { background-color: #ffffff; color: #000000; }
+
+    .btn-load-data {
+      background-color: #25d366;
+      color: #ffffff;
+      padding: 16px 24px;
+      border: 1px solid #25d366;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+      border-radius: 4px;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    }
+    .btn-load-data:hover { background-color: #1ebd56; border-color: #1ebd56; }
+
+    .thank-you-box { display: none; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255, 255, 255, 0.2); padding: 30px; text-align: center; }
+    .btn-back { color: #888888; text-decoration: none; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 25px; }
+    .btn-back:hover { color: #ffffff; }
+
+    /* Bottom Fixed Container for Button & Warning Marquee */
+    .fixed-bottom-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.92);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding-bottom: 15px;
+    }
+
+    .button-marquee {
+      width: 100%;
+      background: rgba(230, 0, 0, 0.2);
+      border-bottom: 1px solid rgba(230, 0, 0, 0.4);
+      color: #ff4d4d;
+      padding: 6px 0;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 10px;
+    }
+
+    .centered-kyc-btn {
+      background-color: #25d366;
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: 50px;
+      font-size: 0.8rem;
+      font-weight: 800;
+      letter-spacing: 1.2px;
+      text-transform: uppercase;
+      text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37, 211, 102, 0.5);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+    }
+    .centered-kyc-btn:hover {
+      background-color: #1ebd56;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 25px rgba(37, 211, 102, 0.7);
+    }
+
+    footer { padding: 40px 20px; text-align: center; font-size: 0.75rem; color: #777777; width: 100%; }
+
+    @media (max-width: 600px) { 
+      .form-grid { grid-template-columns: 1fr; } 
+      .form-group.full-width { grid-column: span 1; } 
+      nav { display: none; } 
+      .centered-kyc-btn { padding: 10px 20px; font-size: 0.72rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <a href="index.html" class="logo">ULTRA CONNECT</a>
+      <span class="badge-ug">UGANDA 🇺🇬</span>
+    </div>
+    <nav>
+      <a href="index.html#apps">Apps</a>
+      <a href="order-vpn.html">VPN Order</a>
+      <a href="data-loading.html" style="color: #ffffff; font-weight: bold;">Data Loading</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Running Information Marquee -->
+  <div class="marquee-container">
+    <marquee scrollamount="6" behavior="scroll" direction="left">
+      ⚡ THIS UNLIMITED DATA PLAN ENABLES ANY VPN APPLICATIONS TO WORK WHETHER PREMIUM OR FREE TIER.
+    </marquee>
+  </div>
+
+  <div class="page-container">
+    <h1>UNLIMITED DATA LOADING</h1>
+    <div class="price-tag">FIXED RATE: 35,000 UGX</div>
+    <p class="subtitle">Complete payment, upload your KYC documentation for verification, and activate your data plan.</p>
+
+    <div class="form-container">
+      
+      <div class="payment-instruction">
+        <h4>Step 1: Mobile Payment</h4>
+        <p>Tap your payment method below to initiate the Mobile Money transaction on your device for <strong>35,000 UGX</strong>.</p>
+      </div>
+
+      <div class="payment-actions">
+        <a href="tel:*165*1*1*0770000000%23" class="btn-payment btn-mtn">
+          <svg class="provider-logo" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="10" fill="#000"/>
+            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#ffcc00" font-size="8" font-weight="bold">MTN</text>
+          </svg>
+          Pay via MTN Mobile Money
+        </a>
+
+        <a href="tel:*185*1*1*0750000000%23" class="btn-payment btn-airtel">
+          <svg class="provider-logo" viewBox="0 0 24 24" fill="currentColor">
+            <circle cx="12" cy="12" r="10" fill="#fff"/>
+            <text x="50%" y="55%" dominant-baseline="middle" text-anchor="middle" fill="#e60000" font-size="7" font-weight="bold">airtel</text>
+          </svg>
+          Pay via Airtel Money
+        </a>
+      </div>
+
+      <form id="dataForm" onsubmit="handleDataSubmit(event)">
+        <div class="payment-instruction" style="margin-top: 10px;">
+          <h4>Step 2: Verification Details</h4>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" required placeholder="e.g. John">
+          </div>
+          
+          <div class="form-group">
+            <label for="surname">Surname</label>
+            <input type="text" id="surname" required placeholder="e.g. Okello">
+          </div>
+
+          <div class="form-group">
+            <label for="contact">Phone Contact</label>
+            <input type="tel" id="contact" required placeholder="+256 700 000 000">
+          </div>
+
+          <div class="form-group">
+            <label for="whatsapp">WhatsApp Number</label>
+            <input type="tel" id="whatsapp" required placeholder="+256 700 000 000">
+          </div>
+
+          <div class="form-group full-width">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" required placeholder="name@example.com">
+          </div>
+
+          <div class="form-group">
+            <label for="idFront">Front View of ID</label>
+            <input type="file" id="idFront" accept="image/*" required>
+          </div>
+
+          <div class="form-group">
+            <label for="profilePic">Profile Picture</label>
+            <input type="file" id="profilePic" accept="image/*" required>
+          </div>
+
+          <div class="form-group full-width">
+            <label for="paymentProof">Payment Screenshot (UGX 35,000)</label>
+            <input type="file" id="paymentProof" accept="image/*" required>
+          </div>
+        </div>
+
+        <div class="notice-box">
+          📌 <strong>Note:</strong> Verification takes up to <strong>24 hours</strong> to verify your documents and payment proof.
+        </div>
+
+        <button type="submit" class="btn-submit-docs">Submit Documents for Verification</button>
+      </form>
+
+      <div id="dataThankYou" class="thank-you-box">
+        <h3>Documents Received</h3>
+        <p style="margin-top: 10px; font-size: 0.9rem; color: #ccc;">
+          Your documents and payment confirmation are under review. Document verification takes up to <strong>24 hours</strong>.
+        </p>
+        
+        <a href="sms:175?body=KYC%20Unlimited%20Data%20Loading%20Request" class="btn-load-data">
+          Load Unlimited Data Plan
+        </a>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn-back">← Back to Portal</a>
+
+    <footer>
+      <p>© 2026 ULTRA CONNECT UGANDA. ALL RIGHTS RESERVED.</p>
+    </footer>
+  </div>
+
+  <!-- Bottom Fixed Bar with Warning Marquee and Load Data Button -->
+  <div class="fixed-bottom-bar">
+    <div class="button-marquee">
+      <marquee scrollamount="5" behavior="scroll" direction="left">
+        ⚠️ CLICK THIS BUTTON ONLY IF YOU ARE VERIFIED AFTER 24 HOURS.
+      </marquee>
+    </div>
+    <a href="sms:175?body=KYC" class="centered-kyc-btn">
+      💬 Load Unlimited Data Plan
+    </a>
+  </div>
+
+  <script>
+    function handleDataSubmit(event) {
+      event.preventDefault();
+      document.getElementById('dataForm').style.display = 'none';
+      document.getElementById('dataThankYou').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

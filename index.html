@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ULTRA CONNECT — Premium VPN & High-Speed Data</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body {
+      background-color: #000000; color: #ffffff; overflow-x: hidden;
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
+      background-size: cover; background-position: center; background-attachment: fixed;
+    }
+    header {
+      position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 40px; z-index: 1000; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .logo { font-size: 1.2rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; text-decoration: none; }
+    .badge-ug { font-size: 0.75rem; background: rgba(255, 255, 255, 0.1); color: #ccc; padding: 4px 8px; border-radius: 2px; margin-left: 8px; border: 1px solid rgba(255, 255, 255, 0.2); }
+    nav a { color: #aaaaaa; text-decoration: none; margin-left: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; }
+    nav a:hover { color: #ffffff; }
+
+    .hero-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 20px 60px 20px; }
+    .pre-header { font-size: 0.8rem; letter-spacing: 3px; color: #aaaaaa; text-transform: uppercase; margin-bottom: 12px; }
+    h1 { font-size: 2.5rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 15px; }
+    p.subtitle { font-size: 1rem; color: #d1d5db; max-width: 650px; line-height: 1.6; margin-bottom: 30px; }
+    
+    .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; margin-bottom: 20px; }
+    .btn-main { background-color: #ffffff; color: #000000; padding: 14px 32px; border: 1px solid #ffffff; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; cursor: pointer; transition: all 0.3s ease; }
+    .btn-main:hover { background-color: transparent; color: #ffffff; }
+    .btn-sub { background-color: rgba(0, 0, 0, 0.4); color: #ffffff; padding: 14px 32px; border: 1px solid rgba(255, 255, 255, 0.4); font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; text-decoration: none; cursor: pointer; transition: all 0.3s ease; backdrop-filter: blur(5px); }
+    .btn-sub:hover { border-color: #ffffff; background-color: #ffffff; color: #000000; }
+
+    .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%; max-width: 1000px; margin-top: 30px; }
+    .app-card { background: rgba(15, 15, 15, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); padding: 25px; text-align: center; backdrop-filter: blur(10px); }
+    .app-card h3 { font-size: 1.1rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
+    .app-card p { font-size: 0.85rem; color: #aaa; margin-bottom: 20px; line-height: 1.5; }
+
+    footer { padding: 40px 20px; text-align: center; font-size: 0.75rem; color: #777777; width: 100%; }
+    @media (max-width: 600px) { nav { display: none; } h1 { font-size: 1.8rem; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <a href="index.html" class="logo">ULTRA CONNECT</a>
+      <span class="badge-ug">UGANDA 🇺🇬</span>
+    </div>
+    <nav>
+      <a href="#apps">Apps</a>
+      <a href="order-vpn.html">VPN Order</a>
+      <a href="data-loading.html">Data Loading</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section class="hero-section" id="services">
+    <div class="pre-header">CARRIER-GRADE NETWORK INFRASTRUCTURE</div>
+    <h1>UNBEATABLE SPEED. BEYOND EVERY HILL.</h1>
+    <p class="subtitle">Ultra Connect delivers high-speed unlimited data loading and premium VPN server access built for maximum speed, security, and unrestricted access across Uganda.</p>
+    <div class="btn-group">
+      <a href="order-vpn.html" class="btn-main">Order VPN Account</a>
+      <a href="data-loading.html" class="btn-sub">Unlimited Data Loading</a>
+      <a href="tutorials.html" class="btn-sub">View Tutorials</a>
+    </div>
+  </section>
+
+  <section class="hero-section" id="apps">
+    <h1>SUPPORTED APPLICATIONS</h1>
+    <p class="subtitle">Download the required client application below to connect directly to our high-speed routing servers.</p>
+    
+    <div class="app-grid">
+      <div class="app-card">
+        <h3>Exotic Tunnel</h3>
+        <p>Available on Google Play Store for easy installation and automated server updates.</p>
+        <a href="https://play.google.com/store/search?q=exotic%20tunnel&c=apps" target="_blank" class="btn-sub" style="display:inline-block;">PlayStore Download</a>
+      </div>
+
+      <div class="app-card">
+        <h3>Exotic Fast VIP</h3>
+        <p>Premium VIP build for high-speed routing. Download the direct installation file below.</p>
+        <!-- Unbranded direct download link -->
+        <a href="https://drive.google.com/uc?export=download&id=YOUR_EXOTIC_FAST_VIP_DRIVE_ID" target="_blank" class="btn-main" style="display:inline-block;">Download APK (Direct)</a>
+      </div>
+
+      <div class="app-card">
+        <h3>HTTP Custom</h3>
+        <p>Custom tunneling client. Import configuration payload files for fast data routing.</p>
+        <a href="https://play.google.com/store/search?q=http%20custom&c=apps" target="_blank" class="btn-sub" style="display:inline-block;">PlayStore Download</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero-section" id="contact">
+    <h1>DIRECT SUPPORT CHANNELS</h1>
+    <p class="subtitle">Need quick activation or technical assistance? Reach out directly.</p>
+    
+    <div class="btn-group">
+      <a href="https://wa.me/256706422500" target="_blank" class="btn-main">WhatsApp Support</a>
+      <a href="https://t.me/KisiraCharles" target="_blank" class="btn-sub">Telegram Channel</a>
+      <a href="mailto:info.kisiracharles@gmail.com" class="btn-sub">Email Support</a>
+    </div>
+
+    <footer>
+      <p>© 2026 ULTRA CONNECT UGANDA. ALL RIGHTS RESERVED.</p>
+    </footer>
+  </section>
+
+</body>
+</html>

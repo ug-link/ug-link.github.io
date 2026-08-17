@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Premium VPN — ULTRA CONNECT</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: #000000;
+      color: #ffffff;
+      overflow-x: hidden;
+      background-image: 
+        linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+    }
+
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 40px;
+      z-index: 1000;
+      background: rgba(0, 0, 0, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .logo {
+      font-size: 1.2rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #ffffff;
+      text-decoration: none;
+    }
+
+    .badge-ug {
+      font-size: 0.75rem;
+      background: rgba(255, 255, 255, 0.1);
+      color: #ccc;
+      padding: 4px 8px;
+      border-radius: 2px;
+      margin-left: 8px;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+    }
+
+    nav a {
+      color: #aaaaaa;
+      text-decoration: none;
+      margin-left: 20px;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      transition: color 0.3s;
+    }
+
+    nav a:hover { color: #ffffff; }
+
+    /* Price Announcement Marquee */
+    .price-marquee-container {
+      width: 100%;
+      background: rgba(37, 211, 102, 0.15);
+      border-bottom: 1px solid rgba(37, 211, 102, 0.3);
+      color: #25d366;
+      padding: 10px 0;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-top: 75px;
+    }
+
+    .page-container {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 60px 20px 60px 20px;
+    }
+
+    h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      text-align: center;
+    }
+
+    p.subtitle {
+      font-size: 0.95rem;
+      color: #d1d5db;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .form-container {
+      width: 100%;
+      max-width: 600px;
+      background: rgba(10, 10, 10, 0.85);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px);
+      padding: 40px;
+      text-align: left;
+      border-radius: 4px;
+    }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .form-group { display: flex; flex-direction: column; margin-bottom: 15px; }
+    .form-group.full-width { grid-column: span 2; }
+
+    label {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: #aaaaaa;
+      margin-bottom: 8px;
+    }
+
+    input[type="text"], input[type="tel"], select {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 12px 15px;
+      color: #ffffff;
+      font-size: 0.9rem;
+      outline: none;
+    }
+
+    select option {
+      background: #000000;
+      color: #ffffff;
+    }
+
+    input[type="file"] {
+      background: rgba(0, 0, 0, 0.6);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 10px;
+      color: #aaaaaa;
+      font-size: 0.8rem;
+    }
+
+    .btn-main {
+      background-color: #ffffff;
+      color: #000000;
+      padding: 14px 32px;
+      border: 1px solid #ffffff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-main:hover { background-color: transparent; color: #ffffff; }
+
+    .thank-you-box {
+      display: none;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      padding: 30px;
+      text-align: center;
+    }
+
+    .btn-back {
+      color: #888888;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      margin-top: 25px;
+    }
+
+    .btn-back:hover { color: #ffffff; }
+
+    footer {
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.75rem;
+      color: #777777;
+      width: 100%;
+    }
+
+    @media (max-width: 600px) {
+      .form-grid { grid-template-columns: 1fr; }
+      .form-group.full-width { grid-column: span 1; }
+      nav { display: none; }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <a href="index.html" class="logo">ULTRA CONNECT</a>
+      <span class="badge-ug">UGANDA 🇺🇬</span>
+    </div>
+    <nav>
+      <a href="index.html#apps">Apps</a>
+      <a href="order-vpn.html" style="color: #ffffff; font-weight: bold;">VPN Order</a>
+      <a href="data-loading.html">Data Loading</a>
+      <a href="tutorials.html">Tutorials</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Premium Account Price Marquee -->
+  <div class="price-marquee-container">
+    <marquee scrollamount="6" behavior="scroll" direction="left">
+      🔥 PREMIUM ACCOUNT PRICE: 3,000 UGX ONLY — GET UNLIMITED HIGH-SPEED ACCESS TODAY!
+    </marquee>
+  </div>
+
+  <div class="page-container">
+    <h1>ORDER PREMIUM VPN ACCOUNT</h1>
+    <p class="subtitle">Instant setup — No ID required. Select your application and submit your payment screenshot to receive matching credentials.</p>
+
+    <div class="form-container">
+      <form id="vpnForm" onsubmit="handleVpnSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group full-width">
+            <label for="vpnApp">Select Target Application</label>
+            <select id="vpnApp" required>
+              <option value="">-- Choose VPN Application --</option>
+              <option value="HTTP Custom">HTTP Custom</option>
+              <option value="Exotic Fast VIP">Exotic Fast VIP</option>
+              <option value="Exotic Tunnel">Exotic Tunnel</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="vpnName">Reference Name</label>
+            <input type="text" id="vpnName" required placeholder="e.g. Alex Kampala">
+          </div>
+
+          <div class="form-group">
+            <label for="vpnWhatsapp">WhatsApp Number</label>
+            <input type="tel" id="vpnWhatsapp" required placeholder="+256 700 000 000">
+          </div>
+
+          <div class="form-group full-width">
+            <label for="paymentProof">Payment Screenshot (3,000 UGX)</label>
+            <input type="file" id="paymentProof" accept="image/*" required>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-main">Submit Payment Proof</button>
+      </form>
+
+      <div id="vpnThankYou" class="thank-you-box">
+        <h3>Payment Received</h3>
+        <p>Thank you! Your payment proof and application choice have been submitted. Your VPN account credentials will be sent to your WhatsApp shortly.</p>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn-back">← Back to Portal</a>
+
+    <footer>
+      <p>© 2026 ULTRA CONNECT UGANDA. ALL RIGHTS RESERVED.</p>
+    </footer>
+  </div>
+
+  <script>
+    function handleVpnSubmit(event) {
+      event.preventDefault();
+      document.getElementById('vpnForm').style.display = 'none';
+      document.getElementById('vpnThankYou').style.display = 'block';
+    }
+  </script>
+</body>
+</html>

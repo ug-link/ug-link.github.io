@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Tutorials — ULTRA CONNECT</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    body {
+      background-color: #000000; color: #ffffff; overflow-x: hidden;
+      background-image: linear-gradient(180deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.88) 100%),
+        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=1920&auto=format&fit=crop');
+      background-size: cover; background-position: center; background-attachment: fixed;
+    }
+    header {
+      position: fixed; top: 0; width: 100%; display: flex; justify-content: space-between; align-items: center;
+      padding: 20px 40px; z-index: 1000; background: rgba(0, 0, 0, 0.85); backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    .logo { font-size: 1.2rem; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: #fff; text-decoration: none; }
+    .badge-ug { font-size: 0.75rem; background: rgba(255, 255, 255, 0.1); color: #ccc; padding: 4px 8px; border-radius: 2px; margin-left: 8px; border: 1px solid rgba(255, 255, 255, 0.2); }
+    nav a { color: #aaaaaa; text-decoration: none; margin-left: 20px; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; }
+    nav a:hover { color: #ffffff; }
+
+    .page-container { min-height: 100vh; display: flex; flex-direction: column; align-items: center; padding: 120px 20px 60px 20px; }
+    h1 { font-size: 2.2rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; text-align: center; }
+    p.subtitle { font-size: 0.95rem; color: #d1d5db; max-width: 650px; line-height: 1.6; margin-bottom: 40px; text-align: center; }
+
+    .section-title {
+      width: 100%; max-width: 1100px; font-size: 1.2rem; letter-spacing: 2px; text-transform: uppercase;
+      color: #ffcc00; margin: 40px 0 20px 0; border-bottom: 1px solid rgba(255, 204, 0, 0.3); padding-bottom: 8px;
+    }
+
+    .video-grid {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px;
+      width: 100%; max-width: 1100px; margin-bottom: 20px;
+    }
+
+    .video-card {
+      background: rgba(10, 10, 10, 0.85); border: 1px solid rgba(255, 255, 255, 0.15);
+      backdrop-filter: blur(15px); border-radius: 4px; overflow: hidden; display: flex; flex-direction: column;
+    }
+
+    .video-wrapper {
+      position: relative; padding-bottom: 56.25%; height: 0; background: #000;
+    }
+    .video-wrapper iframe {
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;
+    }
+
+    .video-info { padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between; }
+    .video-info h3 { font-size: 0.95rem; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 8px; color: #ffffff; }
+    .video-info p { font-size: 0.82rem; color: #aaaaaa; line-height: 1.5; margin-bottom: 12px; }
+
+    .badge-protocol {
+      display: inline-block; font-size: 0.7rem; font-weight: 700; padding: 4px 8px;
+      border-radius: 2px; text-transform: uppercase; letter-spacing: 1px; align-self: flex-start;
+    }
+    .badge-udp { background: rgba(0, 150, 255, 0.2); color: #0096ff; border: 1px solid rgba(0, 150, 255, 0.4); }
+    .badge-v2ray { background: rgba(255, 0, 100, 0.2); color: #ff0064; border: 1px solid rgba(255, 0, 100, 0.4); }
+    .badge-file { background: rgba(0, 230, 118, 0.2); color: #00e676; border: 1px solid rgba(0, 230, 118, 0.4); }
+    .badge-free { background: rgba(255, 204, 0, 0.2); color: #ffcc00; border: 1px solid rgba(255, 204, 0, 0.4); }
+
+    .btn-back { color: #888888; text-decoration: none; font-size: 0.8rem; letter-spacing: 1.5px; text-transform: uppercase; margin-top: 40px; }
+    .btn-back:hover { color: #ffffff; }
+
+    footer { padding: 40px 20px; text-align: center; font-size: 0.75rem; color: #777777; width: 100%; }
+    @media (max-width: 600px) { nav { display: none; } h1 { font-size: 1.8rem; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div>
+      <a href="index.html" class="logo">ULTRA CONNECT</a>
+      <span class="badge-ug">UGANDA 🇺🇬</span>
+    </div>
+    <nav>
+      <a href="index.html#apps">Apps</a>
+      <a href="order-vpn.html">VPN Order</a>
+      <a href="data-loading.html">Data Loading</a>
+      <a href="tutorials.html" style="color: #ffffff; font-weight: bold;">Tutorials</a>
+      <a href="index.html#contact">Contact</a>
+    </nav>
+  </header>
+
+  <div class="page-container">
+    <h1>SETUP & CONFIGURATION TUTORIALS</h1>
+    <p class="subtitle">Comprehensive video guides for installing apps, managing premium accounts across protocols, and connecting to free backup VPNs.</p>
+
+    <!-- SECTION 1: EXOTIC TUNNEL (5 VIDEOS) -->
+    <div class="section-title">1. EXOTIC TUNNEL TUTORIALS (UDP PROTOCOL ONLY)</div>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 1" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>1. App Installation Guide</h3>
+            <p>How to download, install, and allow necessary permissions for Exotic Tunnel from Google Play Store.</p>
+          </div>
+          <span class="badge-protocol badge-udp">UDP Protocol Only</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 2" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>2. Account Configuration</h3>
+            <p>Entering your purchased premium username and password inside Exotic Tunnel for fast authorization.</p>
+          </div>
+          <span class="badge-protocol badge-udp">UDP Protocol Only</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 3" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>3. Server Selection & Tweaks</h3>
+            <p>Choosing the lowest latency UDP servers and setting optimized network tweaks for maximum speed.</p>
+          </div>
+          <span class="badge-protocol badge-udp">UDP Protocol Only</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 4" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>4. Connection Troubleshooting</h3>
+            <p>Quick fixes for "Connection Reconnecting" errors, clearing cache, and resetting UDP ports.</p>
+          </div>
+          <span class="badge-protocol badge-udp">UDP Protocol Only</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 5" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>5. Speed Optimization Tips</h3>
+            <p>Best network settings to reduce ping and boost download speeds on Exotic Tunnel UDP.</p>
+          </div>
+          <span class="badge-protocol badge-udp">UDP Protocol Only</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: EXOTIC FAST VIP (5 VIDEOS) -->
+    <div class="section-title">2. EXOTIC FAST VIP TUTORIALS (UDP & V2RAY)</div>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 1" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>1. APK Direct Installation</h3>
+            <p>How to download the APK file directly and bypass "Unknown Sources" warnings on Android.</p>
+          </div>
+          <span class="badge-protocol badge-v2ray">Supports UDP & V2Ray</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 2" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>2. Premium Account Setup</h3>
+            <p>Logging into your premium account to unlock high-speed VIP servers and protocols.</p>
+          </div>
+          <span class="badge-protocol badge-v2ray">Supports UDP & V2Ray</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 3" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>3. UltraCrazy V2Ray Speeds</h3>
+            <p>Setting up V2Ray protocol mode to experience full line-rate bandwidth and UltraCrazy connection speeds.</p>
+          </div>
+          <span class="badge-protocol badge-v2ray">🔥 UltraCrazy V2Ray Speeds</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 4" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>4. UDP Protocol Setup</h3>
+            <p>How to switch to UDP mode when network conditions favor standard packet tunneling.</p>
+          </div>
+          <span class="badge-protocol badge-v2ray">UDP Mode Setup</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 5" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>5. V2Ray vs UDP Comparison</h3>
+            <p>A visual comparison showing latency, stability, and speed differences between both protocols.</p>
+          </div>
+          <span class="badge-protocol badge-v2ray">Protocol Comparison</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 3: HTTP CUSTOM (5 VIDEOS) -->
+    <div class="section-title">3. HTTP CUSTOM TUTORIALS (FILE IMPORTING)</div>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 1" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>1. App Installation Guide</h3>
+            <p>Downloading HTTP Custom safely from Google Play Store and granting file storage access.</p>
+          </div>
+          <span class="badge-protocol badge-file">File Payload Import</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 2" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>2. How to Import `.hc` Files</h3>
+            <p>Downloading config files from Telegram/WhatsApp and importing them into HTTP Custom.</p>
+          </div>
+          <span class="badge-protocol badge-file">File Payload Import</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 3" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>3. Password Protected Configs</h3>
+            <p>Entering password keys for protected `.hc` configuration files provided by Ultra Connect.</p>
+          </div>
+          <span class="badge-protocol badge-file">File Payload Import</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 4" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>4. Fixing "302 Moved" & Blocked IPs</h3>
+            <p>Troubleshooting connection loops by clearing app logs and toggling Airplane Mode.</p>
+          </div>
+          <span class="badge-protocol badge-file">File Payload Import</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 5" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>5. Exporting & Sharing Payload Files</h3>
+            <p>How to back up working configuration files and share them across your secondary devices.</p>
+          </div>
+          <span class="badge-protocol badge-file">File Payload Import</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 4: FREE ALTERNATIVE VPNS (5 VIDEOS) -->
+    <div class="section-title">4. FREE ALTERNATIVE VPNS (BACKUP OPTIONS)</div>
+    <div class="video-grid">
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 1" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>1. Free Tunneling Overview</h3>
+            <p>How backup free VPNs work when you haven't bought a premium account yet.</p>
+          </div>
+          <span class="badge-protocol badge-free">100% Free Access</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 2" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>2. Free VPN App #1 Setup</h3>
+            <p>Installing and configuring our top-recommended zero-cost alternative app.</p>
+          </div>
+          <span class="badge-protocol badge-free">100% Free Access</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 3" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>3. Free VPN App #2 Setup</h3>
+            <p>Backup guide for a second free VPN option if main servers experience heavy traffic.</p>
+          </div>
+          <span class="badge-protocol badge-free">100% Free Access</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 4" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>4. DNS & SNI Free Tricks</h3>
+            <p>Configuring free public SNI hosts for basic messaging and light web browsing.</p>
+          </div>
+          <span class="badge-protocol badge-free">100% Free Access</span>
+        </div>
+      </div>
+
+      <div class="video-card">
+        <div class="video-wrapper"><iframe src="https://www.youtube.com/embed/YOUR_VIDEO_ID_HERE" title="Video 5" allowfullscreen></iframe></div>
+        <div class="video-info">
+          <div>
+            <h3>5. Free vs Premium Comparison</h3>
+            <p>Understanding speed limits on free servers and why upgrading to Premium costs only 3,000 UGX.</p>
+          </div>
+          <span class="badge-protocol badge-free">100% Free Access</span>
+        </div>
+      </div>
+    </div>
+
+    <a href="index.html" class="btn-back">← Back to Portal</a>
+
+    <footer>
+      <p>© 2026 ULTRA CONNECT UGANDA. ALL RIGHTS RESERVED.</p>
+    </footer>
+  </div>
+
+</body>
+</html>
