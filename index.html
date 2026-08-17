@@ -43,6 +43,38 @@
       100% { background-position: 0% center; }
     }
 
+    /* Network Specific Burner Banner Above Infra Title */
+    .network-type-banner {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(90deg, rgba(0, 119, 255, 0.25), rgba(255, 0, 128, 0.25));
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 6px 16px;
+      border-radius: 20px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: #00e5ff;
+      margin-bottom: 14px;
+      backdrop-filter: blur(8px);
+      box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+    }
+    .network-type-banner span.dot {
+      width: 7px;
+      height: 7px;
+      background-color: #00e5ff;
+      border-radius: 50%;
+      box-shadow: 0 0 8px #00e5ff;
+      animation: pulseDot 1.5s infinite;
+    }
+
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.3; transform: scale(0.8); }
+    }
+
     /* Header Right Section & Dropdown Menu */
     .header-right { display: flex; align-items: center; gap: 20px; }
     nav a { color: #aaaaaa; text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1.5px; transition: color 0.3s; }
@@ -124,7 +156,27 @@
     /* App Cards & App Icons Styling */
     .app-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%; max-width: 1000px; margin-top: 30px; }
     .app-card { background: rgba(15, 15, 15, 0.8); border: 1px solid rgba(255, 255, 255, 0.15); padding: 25px; text-align: center; backdrop-filter: blur(10px); }
+    
+    /* Generic and SVG App Icon Styling */
     .app-icon { width: 70px; height: 70px; border-radius: 16px; margin-bottom: 15px; object-fit: cover; border: 1px solid rgba(255, 255, 255, 0.2); box-shadow: 0 4px 15px rgba(0,0,0,0.5); }
+    .hc-badge-icon {
+      width: 70px;
+      height: 70px;
+      border-radius: 16px;
+      margin: 0 auto 15px auto;
+      background: linear-gradient(135deg, #e60000 0%, #800000 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 900;
+      font-size: 1.8rem;
+      letter-spacing: -1px;
+      color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      box-shadow: 0 4px 15px rgba(230, 0, 0, 0.4);
+      user-select: none;
+    }
+
     .app-card h3 { font-size: 1.1rem; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 10px; }
     .app-card p { font-size: 0.85rem; color: #aaa; margin-bottom: 20px; line-height: 1.5; }
 
@@ -168,6 +220,12 @@
   </header>
 
   <section class="hero-section" id="services">
+    <!-- Network Type Specific Burner Badge -->
+    <div class="network-type-banner">
+      <span class="dot"></span>
+      <span>ZERO-RATED TUNNELING • SNI HOST INJECTION • SSH/UDP PROTOCOL</span>
+    </div>
+
     <div class="pre-header">
       <!-- Network Logo Icon -->
       <svg class="hero-logo-icon" viewBox="0 0 24 24">
@@ -205,8 +263,8 @@
       </div>
 
       <div class="app-card">
-        <!-- Official HTTP Custom PlayStore Icon -->
-        <img src="https://cdn.aptoide.com/imgs/f/d/8/fd87641e0c1d13cd4fa6bb79138ffc70_fgraphic.png" alt="HTTP Custom Icon" class="app-icon">
+        <!-- Replaced with authentic red HC app badge icon -->
+        <div class="hc-badge-icon">HC</div>
         <h3>HTTP Custom</h3>
         <p>Custom tunneling client. Import configuration payload files for fast data routing.</p>
         <a href="https://play.google.com/store/search?q=http%20custom&c=apps" target="_blank" class="btn-sub" style="display:inline-block;">PlayStore Download</a>
