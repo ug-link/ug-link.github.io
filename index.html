@@ -93,7 +93,25 @@
 
     /* Hero Section */
     .hero-section { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 120px 20px 60px 20px; }
-    .pre-header { font-size: 0.8rem; letter-spacing: 3px; color: #aaaaaa; text-transform: uppercase; margin-bottom: 12px; }
+    
+    /* Pre-header layout with logo icon */
+    .pre-header {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.8rem;
+      letter-spacing: 3px;
+      color: #aaaaaa;
+      text-transform: uppercase;
+      margin-bottom: 12px;
+    }
+    .hero-logo-icon {
+      width: 22px;
+      height: 22px;
+      fill: #ffffff;
+      filter: drop-shadow(0 0 8px rgba(255,255,255,0.4));
+    }
+
     h1 { font-size: 2.5rem; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 15px; }
     p.subtitle { font-size: 1rem; color: #d1d5db; max-width: 650px; line-height: 1.6; margin-bottom: 30px; }
     
@@ -150,7 +168,13 @@
   </header>
 
   <section class="hero-section" id="services">
-    <div class="pre-header">CARRIER-GRADE NETWORK INFRASTRUCTURE</div>
+    <div class="pre-header">
+      <!-- Network Logo Icon -->
+      <svg class="hero-logo-icon" viewBox="0 0 24 24">
+        <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+      </svg>
+      <span>CARRIER-GRADE NETWORK INFRASTRUCTURE</span>
+    </div>
     <h1>UNBEATABLE SPEED. BEYOND EVERY HILL.</h1>
     <p class="subtitle">Ultra Connect delivers high-speed unlimited data loading and premium VPN server access built for maximum speed, security, and unrestricted access across Uganda.</p>
     <div class="btn-group">
@@ -181,7 +205,8 @@
       </div>
 
       <div class="app-card">
-        <img src="https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcR0kTK8tRCvrMc5kOC0KPLDBHxi5sAe5Tw6k2QRcS0f0mT561LSstIBTPGCgd2DtXtYQs8kch17O858M0Q" alt="HTTP Custom Icon" class="app-icon">
+        <!-- Official HTTP Custom PlayStore Icon -->
+        <img src="https://cdn.aptoide.com/imgs/f/d/8/fd87641e0c1d13cd4fa6bb79138ffc70_fgraphic.png" alt="HTTP Custom Icon" class="app-icon">
         <h3>HTTP Custom</h3>
         <p>Custom tunneling client. Import configuration payload files for fast data routing.</p>
         <a href="https://play.google.com/store/search?q=http%20custom&c=apps" target="_blank" class="btn-sub" style="display:inline-block;">PlayStore Download</a>
