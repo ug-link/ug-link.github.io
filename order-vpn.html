@@ -70,27 +70,13 @@
 
     nav a:hover { color: #ffffff; }
 
-    /* Price Announcement Marquee */
-    .price-marquee-container {
-      width: 100%;
-      background: rgba(37, 211, 102, 0.15);
-      border-bottom: 1px solid rgba(37, 211, 102, 0.3);
-      color: #25d366;
-      padding: 10px 0;
-      font-size: 0.85rem;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      margin-top: 75px;
-    }
-
     .page-container {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      padding: 60px 20px 60px 20px;
+      padding: 120px 20px 60px 20px;
     }
 
     h1 {
@@ -173,6 +159,44 @@
 
     .btn-main:hover { background-color: transparent; color: #ffffff; }
 
+    .btn-plans {
+      background-color: transparent;
+      color: #ffffff;
+      padding: 14px 32px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 10px;
+      transition: all 0.3s ease;
+    }
+
+    .btn-plans:hover { border-color: #ffffff; background-color: rgba(255, 255, 255, 0.05); }
+
+    .plans-box {
+      display: none;
+      margin-top: 20px;
+      border-top: 1px solid rgba(255, 255, 255, 0.15);
+      padding-top: 20px;
+    }
+
+    .plans-list {
+      list-style: none;
+      font-size: 0.85rem;
+      color: #d1d5db;
+      line-height: 2;
+    }
+
+    .plans-note {
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: #888888;
+      font-style: italic;
+    }
+
     .thank-you-box {
       display: none;
       background: rgba(255, 255, 255, 0.05);
@@ -223,13 +247,6 @@
     </nav>
   </header>
 
-  <!-- Premium Account Price Marquee -->
-  <div class="price-marquee-container">
-    <marquee scrollamount="6" behavior="scroll" direction="left">
-      🔥 PREMIUM ACCOUNT PRICE: 3,000 UGX ONLY — GET UNLIMITED HIGH-SPEED ACCESS TODAY!
-    </marquee>
-  </div>
-
   <div class="page-container">
     <h1>ORDER PREMIUM VPN ACCOUNT</h1>
     <p class="subtitle">Instant setup — No ID required. Select your application and submit your payment screenshot to receive matching credentials.</p>
@@ -258,12 +275,23 @@
           </div>
 
           <div class="form-group full-width">
-            <label for="paymentProof">Payment Screenshot (3,000 UGX)</label>
+            <label for="paymentProof">Payment Screenshot</label>
             <input type="file" id="paymentProof" accept="image/*" required>
           </div>
         </div>
 
         <button type="submit" class="btn-main">Submit Payment Proof</button>
+        <button type="button" class="btn-plans" onclick="togglePlans()">View Plans</button>
+
+        <div id="plansBox" class="plans-box">
+          <label style="display: block; margin-bottom: 12px; color: #25d366;">Subscription Pricing Plans</label>
+          <ul class="plans-list">
+            <li>🔹 <strong>1 Month:</strong> 4,000 UGX</li>
+            <li>🔹 <strong>2 Months:</strong> 7,000 UGX</li>
+            <li>🔹 <strong>3 Months:</strong> 11,000 UGX</li>
+          </ul>
+          <p class="plans-note">For further details or custom durations, please contact the admin or your official reseller.</p>
+        </div>
       </form>
 
       <div id="vpnThankYou" class="thank-you-box">
@@ -284,6 +312,15 @@
       event.preventDefault();
       document.getElementById('vpnForm').style.display = 'none';
       document.getElementById('vpnThankYou').style.display = 'block';
+    }
+
+    function togglePlans() {
+      const plansBox = document.getElementById('plansBox');
+      if (plansBox.style.display === 'block') {
+        plansBox.style.display = 'none';
+      } else {
+        plansBox.style.display = 'block';
+      }
     }
   </script>
 </body>
